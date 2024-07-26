@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let bookList = [
+        {
+            title: "To Kill a Mockingbird",
+            genre: "Fiction",
+            year: 1960,
+            pages: 281,
+            author: "Harper Lee"
+        },
+        {
+            title: "1984",
+            genre: "Dystopian",
+            year: 1949,
+            pages: 328,
+            author: "George Orwell",
+        },
+        {
+            title: "Moby Dick",
+            genre: "Adventure",
+            year: 1851,
+            pages: 635,
+            author: "Herman Melville"
+        },
+        {
+            title: "Pride and Prejudice",
+            genre: "Romance",
+            year: 1813,
+            pages: 279,
+            author: "Jane Austen"
+        },
+        {
+            title: "The Great Gatsby",
+            genre: "Tragedy",
+            year: 1925,
+            pages: 180,
+            author: "F. Scott Fitzgerald"
+        }
+    ];
+
+    // function foo(books) {
+    //     for (let i = 0; i < books.length; i++) {
+    //         const book = books[i];
+    //         book.id = i + 1;
+    //     }
+    //
+    // }
+    //
+    // foo(bookList);
+    //
+    // console.log(bookList);
+
+
+    function bar(books) {
+        let arr = [];
+        for (let i = 0; i < books.length; i++) {
+            const book = books[i];
+            let newBook = {
+                id: i+1,
+                title: book.title,
+                genre:book.genre,
+                year:book.year,
+                pages:book.pages,
+                author:book.author
+
+
+            }
+
+            arr.push(newBook);
+
+        }
+
+        return arr;
+
+    }
+
+    let books = bar(bookList);
+    console.log(books);
+    console.log(bookList);
+
+
+</script>
+</body>
+</html>

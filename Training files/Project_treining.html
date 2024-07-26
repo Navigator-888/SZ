@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Project treining</title>
+
+</head>
+
+
+<body>
+
+<!--<button id="push">push</button>-->
+<!--<div id="traget"></div>-->
+
+
+<script>
+
+    //     let button = document.getElementById('push');
+    //
+    //     button.onclick = function () {
+    //     let block = document.createElement('div');
+    //     let numberInBlock = Math.round(Math.random() * 10);
+    //     block.innerText = numberInBlock;
+    //     document.body.appendChild(block);
+    // }
+
+
+   //Находим оба элемента по идентификатору и сохраняем их в соответствующиме переменные
+   //  let button = document.getElementById('push');  //Есть кнопка
+   //  let target = document.getElementById('traget'); //Есть блок
+   //
+   //         button.onclick = function () {        //При нажатии на кнопку
+   //
+   //         target.innerHTML = '';          //Очищается наполнение traget каждый раз при нажатии кнопки
+   //
+   //          let block = document.createElement('div'); //создаем блок div и сохраняем в переменную block.
+   //          block.classList.add('asd'); //присваиваем  класс asd, чтобы добавлять стили через CSS.
+   //
+   //          block.innerText = Math.round(Math.random() * 10);//Наполнение блока числами
+   //          target.appendChild(block);//добавляем block к target. Он будет внутри <div id="traget">.
+   //      }
+
+//========================================================================================
+
+    //==========================BOOK===================================
+
+    // let bookList = [
+    //     {
+    //         title: "To Kill a Mockingbird",
+    //         genre: "Fiction",
+    //         year: 1960,
+    //         pages: 281,
+    //         author: "Harper Lee",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/937/8n93nxmx7xt4oc10k95x227gtfib5anz/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_little_women.jpg',
+    //
+    //     },
+    //     {
+    //         title: "1984",
+    //         genre: "Dystopian",
+    //         year: 1949,
+    //         pages: 328,
+    //         author: "George Orwell",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/3ff/3tm89l0a03htalhak15k2wtgp4ohb2iq/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_jane_eyre.jpg',
+    //
+    //     },
+    //     {
+    //         title: "Moby Dick",
+    //         genre: "Adventure",
+    //         year: 1851,
+    //         pages: 635,
+    //         author: "Herman Melville",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/f83/wvs2wecs2qoimrimv5obxuie6wnp796w/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_tales_of_mystery_and_imagination.jpg',
+    //
+    //     },
+    //     {
+    //         title: "Pride and Prejudice",
+    //         genre: "Romance",
+    //         year: 1813,
+    //         pages: 279,
+    //         author: "Jane Austen",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/0fd/9qloeqeilmlz3mbn2tvw199mg9k423wt/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_alice_in_wonderland.jpg',
+    //
+    //     },
+    //     {
+    //         title: "The Great Gatsby",
+    //         genre: "Tragedy",
+    //         year: 1925,
+    //         pages: 180,
+    //         author: "F. Scott Fitzgerald",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/c25/lq7qbxmomxyyxg1zfdlyxuw0pk3wuckh/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_moby_dick.jpg',
+    //
+    //     }
+    // ];
+    //
+    //
+    // for(let book of bookList) {
+    //     let div = document.createElement('div');
+    //     let h2 = document.createElement('h2');
+    //     h2.innerText = 'BOOK SALE';
+    //
+    //     let h4 = document.createElement('h4');
+    //     h4.innerText = 'B O O K S';
+    //
+    //     let img = document.createElement('img');
+    //     img.src = book.photo;
+    //
+    //     let ul = document.createElement('ul');
+    //     for (let key in book) {
+    //         if (key !== 'photo') {
+    //             let li = document.createElement('li');
+    //             li.innerText = key + ' : ' +  book[key];
+    //             ul.appendChild(li);
+    //         }
+    //     }
+    //
+    //     div.append(h2, h4, ul, img);
+    //     document.body.appendChild(div);
+    // }
+
+    //=========================ПРИ НАЖАТИИ КНОПКИ НОВАЯ КНИГА==================
+
+    // let bookList = [
+    //     {
+    //         title: "To Kill a Mockingbird",
+    //         genre: "Fiction",
+    //         year: 1960,
+    //         pages: 281,
+    //         author: "Harper Lee",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/937/8n93nxmx7xt4oc10k95x227gtfib5anz/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_little_women.jpg',
+    //
+    //     },
+    //     {
+    //         title: "1984",
+    //         genre: "Dystopian",
+    //         year: 1949,
+    //         pages: 328,
+    //         author: "George Orwell",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/3ff/3tm89l0a03htalhak15k2wtgp4ohb2iq/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_jane_eyre.jpg',
+    //
+    //     },
+    //     {
+    //         title: "Moby Dick",
+    //         genre: "Adventure",
+    //         year: 1851,
+    //         pages: 635,
+    //         author: "Herman Melville",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/f83/wvs2wecs2qoimrimv5obxuie6wnp796w/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_tales_of_mystery_and_imagination.jpg',
+    //
+    //     },
+    //     {
+    //         title: "Pride and Prejudice",
+    //         genre: "Romance",
+    //         year: 1813,
+    //         pages: 279,
+    //         author: "Jane Austen",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/0fd/9qloeqeilmlz3mbn2tvw199mg9k423wt/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_alice_in_wonderland.jpg',
+    //
+    //     },
+    //     {
+    //         title: "The Great Gatsby",
+    //         genre: "Tragedy",
+    //         year: 1925,
+    //         pages: 180,
+    //         author: "F. Scott Fitzgerald",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/c25/lq7qbxmomxyyxg1zfdlyxuw0pk3wuckh/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_moby_dick.jpg',
+    //
+    //     }
+    // ];
+
+    // for(let book of bookList) {
+    //     let div = document.createElement('div');
+    //     let h2 = document.createElement('h2');
+    //     h2.innerText = 'BOOK SALE';
+    //
+    //     let h4 = document.createElement('h4');
+    //     h4.innerText = 'B O O K S';
+    //
+    //     let img = document.createElement('img');
+    //     img.src = book.photo;
+    //
+    //     let ul = document.createElement('ul');
+    //     for (let key in book) {
+    //         if (key !== 'photo') {
+    //             let li = document.createElement('li');
+    //             li.innerText = key + ' : ' +  book[key];
+    //             ul.appendChild(li);
+    //         }
+    //     }
+    //
+    //     div.append(h2, h4, ul, img);
+    //     document.body.appendChild(div);
+    // }
+    //===================================================
+
+
+</script>
+
+</body>
+</html>
