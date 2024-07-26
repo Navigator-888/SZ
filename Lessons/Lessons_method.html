@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Methods</title>
+</head>
+<body>
+
+<script>
+
+    // 1. FOR
+
+    // for (let i = 0; i < users.length; i++) {
+    //     let user = users[i];
+    //     console.log(users[i]);
+    // }
+
+    // 2. FOR.....OF
+
+    // for(let user of users) {
+    //     console.log(user);
+    // }
+
+    // 3. forEach
+
+    // users.forEach(function (user) {
+    //     console.log(user);
+    // })
+
+    // users.forEach(user => {console.log(user)});
+
+    //============= 4. MAP ==========================
+
+    // let newUsers = users.map(user => {
+    //     return user;
+    // })
+    // console.log(newUsers);
+
+  //   let users = [
+  //       {name: 'vasaja', age:25, status: true},
+  //       {name: 'petja', age:26, status: false},
+  //       {name: 'kolja', age:30, status: true},
+  //       {name: 'nadja', age:25, status: false}
+  //   ];
+  //
+  //
+  // let newUsers = users.map(user => {
+  //    let result = user.age + 5;
+  //    return result;
+  // })
+  //  console.log(newUsers);   // Увеличили возраст на 5
+
+//==================================================================================
+    //========================REDUCE====================================
+
+    //Есть массив и надо найти сумму всех элементов массива.
+    // 1. Если через цикл
+
+    // let arr = [2, 3, 4, 5, 6, 7, 8];
+    // let sum = 0;                       //объявляем переменную в которую накапливаем сумму элементов по очереди
+    // for(let i= 0; i < arr.length; i++) {
+    //     sum = sum + arr[i];                    //сумма = начальный элемент + текущий элемент
+    // };
+    // console.log(sum);
+
+    // 2.Если через reduce:         // !!!!!! REDUCE - это функция !!!!!!
+    //  let arr = [2, 3, 4, 5, 6, 7, 8];
+    //accum - это элемент в который накапливается результат сложения
+    // item - это текущий элемент массива
+    //    let sum = arr.reduce(function (accum, item){
+    //  accum = accum + item;
+    // return accum;                   // return - обязательно внутри функции !!!!!!
+    //   }, 0);                             // 0 - это начальная цифра отсчёта к которой прибавляется item
+    //   console.log(sum);
+
+    // Сокращённая запись:
+    // let arr = [2, 3, 4, 5, 6, 7, 8];
+    // let sum = arr.reduce((accum, item) => accum += item);
+    // console.log(sum);
+    //убрать слово function
+    // совместили операцию присвоения с return :   return accum += item;
+    // т.к. у нас внутри функции одна операция, то можно убрать return, но тогда и убрать { }
+
+
+
+
+
+    // let arr = [10, 22, 56, 76, 99, 20];
+    // let min = arr[0];
+    // for (let i = 0; i < arr.length; i++) {
+    //     let num = arr[i];
+    //     if(num < min) {
+    //         min = num;
+    //     }
+    // }
+    //    console.log(min);
+
+    // 1. Инициализация переменных:
+    //
+    //   ---  Массив arr содержит значения [10, 22, 56, 76, 99, 20].
+    //   ---  Переменная min инициализируется первым элементом массива arr[0], который равен 10.
+    //  2. Цикл for:
+    //
+    // ---Цикл начинается с i = 0 и продолжается до тех пор, пока i меньше длины массива
+    // arr (то есть, arr.length равно 6).
+    //
+    // ----Пошаговое выполнение цикла: ------
+    // +++ Итерация 1 (i = 0):
+    //
+    // num = arr[0] => num = 10.
+    // Сравниваем num и min: 10 < 10 (ложно).
+    //     min остается 10.
+    // Итерация 2 (i = 1):
+    //
+    // num = arr[1] => num = 22.
+    // Сравниваем num и min: 22 < 10 (ложно).
+    //     min остается 10.
+    // Итерация 3 (i = 2):
+    //
+    // num = arr[2] => num = 56.
+    // Сравниваем num и min: 56 < 10 (ложно).
+    //     min остается 10.
+    // Итерация 4 (i = 3):
+    //
+    // num = arr[3] => num = 76.
+    // Сравниваем num и min: 76 < 10 (ложно).
+    //     min остается 10.
+    // Итерация 5 (i = 4):
+    //
+    // num = arr[4] => num = 99.
+    // Сравниваем num и min: 99 < 10 (ложно).
+    //     min остается 10.
+    // Итерация 6 (i = 5):
+    //
+    // num = arr[5] => num = 20.
+    // Сравниваем num и min: 20 < 10 (ложно).
+    //     min остается 10.
+    // Конец цикла:
+    //
+    //     Цикл завершается, так как i достигает длины массива (arr.length).
+    //     Вывод результата:
+    //
+    //     console.log(min); выводит значение 10, которое является наименьшим числом в массиве arr.
+    //     Итог:
+    // Код проходит по каждому элементу массива, сравнивает его с текущим минимальным значением
+    // и обновляет минимальное значение, если текущий элемент меньше.
+    // В результате переменная min будет содержать наименьшее значение из массива,
+    // которое затем выводится в консоль. В данном случае, минимальное значение — это 10.
+    //
+
+
+    // let arr = [11, 22, 33, 44, 55];
+    // let max = arr[0];
+    // for(let i=0; i < arr.length; i++) {
+    //     let num = arr[i];
+    //     if(num > max) {
+    //         max = num;
+    //     }
+    // }
+    // console.log(max);
+
+
+
+    //==============МЕТОДЫ  МАССИВОВ===============================
+
+   //  //==1. PUSH  ======================добавляет элементы в конец массива
+   //  let mas = [11, 22, 33, 44, 55];
+   //  mas.push(888);
+   //  console.log(mas);  //Добавили 888
+   //
+   //  //==2.  POP =======================удаляет последний элемент массива
+   //  let asd = [11, 22, 33, 44, 55];
+   //  asd.pop();
+   //  console.log(asd);  //Удалили 55
+   //
+   //  //==3. SHIFT =============================удаляет первый элемент массива
+   //  let qwe = [111, 222, 333];
+   //  qwe.shift();
+   //  console.log(qwe); //Удалили 111
+   //
+   //  //==4. UNSHIFT ========================добавляет элементы в начало массива
+   //
+   //  let zxc = [111, 222, 333];
+   //  zxc.unshift(888);
+   //  console.log(zxc);   //Добавили 888 в начало массива
+   //
+   //  //==5. SPLIT ======================превращает строку в массив, используя разделитель
+   //
+   //  let ddd = "Long, live, Okten!";
+   //  let sss = ddd.split(""); //Без пробела и разделителя
+   //  console.log(sss);     //  ['L', 'o', 'n', 'g', ',', ' ', 'l', 'i', 'v', 'e', ',', ' ', 'O', 'k', 't', 'e', 'n', '!']
+   //
+   //  let aaa = "Long, live, Okten!";
+   //  let qqq = aaa.split(" "); //С пробелом и без разделителя
+   //  console.log(qqq);          //['Long,', 'live,', 'Okten!']
+   //
+   // //==6. JOIN ==========================делает из массива строку с учётом разделителя
+   //
+   //  let fff = ['hello', 'welcome', 'Okten', 'is', 'good'];
+   //  let hhh = fff.join("");   // без пробела
+   //  console.log(hhh);    //  hellowelcomeOktenisgood
+   //
+   //  let uuu = ['hello', 'welcome', 'Okten', 'is', 'good'];
+   //  let ttt = uuu.join(" ");   // с пробелом
+   //  console.log(ttt);    //  hello welcome Okten is good
+   //
+   //  let jjj = ['hello', 'welcome', 'Okten', 'is', 'good'];
+   //  let nnn = jjj.join("_");   // с пробелом и разделителем
+   //  console.log(nnn);    //  hello_welcome_Okten_is_good
+   //
+   //  //==7. SLICE ========копирует массив и создаёт новый массив от указанного индекса и до указанного индекса
+   //                       //Если индексы не указаны, то копируется весь массив
+   //
+   //  let mmm = [1, 2, 3, 4, 5, 6, 7, 8];
+   //  let vvv = mmm.slice(0, 3); //от индекса 0 до 3
+   //  console.log(vvv);          //[1, 2, 3]
+
+
+    // let array = ['ford', 'opel', 'mazda', 'subaru', 'toyota', 'benz', 'fiat', 'nissan', 'wolksvagen'];
+    //      let newArray = array.filter(car => car !== 'toyota');
+    //           console.log(newArray);
+
+
+
+    // let array = ['ford', 'opel', 'mazda', 'subaru', 'toyota', 'benz', 'fiat', 'nissan', 'wolksvagen'];
+    //       let newArr = array.splice(2, 3); //с индекса 2 убрать 3 элемента
+    //            console.log(array);
+
+
+    //============================================================================
+    // let arrPeolpe = [
+    //     {id: 1, name: 'anna', age: 18, hair: 'red', gender: 'female'},
+    //     {id: 2, name: 'vasja', age: 25, hair: 'red', gender: 'male'},
+    //     {id: 3, name: 'dasha', age: 23, hair: 'red', gender: 'female'},
+    //     {id: 4, name: 'petja', age: 30, hair: 'red', gender: 'male'},
+    //     {id: 5, name: 'masha', age: 31, hair: 'red', gender: 'female'},
+    //     {id: 6, name: 'boris', age: 41, hair: 'red', gender: 'male'},
+    //     {id: 7, name: 'galina', age: 52, hair: 'red', gender: 'female'}
+    //  ];
+    //
+    // let newArr = arrPeolpe.filter(person => person !== arrPeolpe[0]);  // без первого объекта
+    // console.log(newArr);
+
+    //+++++++++++++++++++++++++++REDUCE+++++++++++++++++++
+    // let numbers = [11, 22, 33, 44, 55];
+    //
+    //     function sum(numbers) {
+    //          return numbers.reduce(function(accumulator, current) {
+    //                               return accumulator + current;}, 0);
+    //                               }
+    //                                 console.log(sum(numbers));
+
+    // У нас два оператора return
+    //  Первый раз return срабатывает в середине функции reduce.
+    //  Он возвращает сумму total + current для каждой итерации цикла reduce.
+    //
+    //  Второй раз return возвращает конечный результат вычисления суммы
+    //  всех элментов массива, когда цикл reduce завершит свою работу.
+    //
+    //  Пошаговый процесс работы функции:
+    //
+    //  Начальное значение total = 0.
+    // Для каждого элемента current в массиве numbers выполняется операция total + current.
+    // Результат добавляется в total.
+    // На каждой итерации этот результат возвращается и используется как новое
+    // значение total.
+    // После последней итерации метод reduce возвращает конечный результат
+    // вычисления суммы всех элементов массива numbers.
+
+
+    //+++++++++++++++++++++++++++++++++++++++
+    //     let array = [11, 22, 33, 44, 55];
+    //     function calcSum(arr) {
+    //         for(let num of arr) {
+    //             let result = arr.reduce((sum, number) => sum + number);
+    //             return result;
+    //         }
+    //     }
+    //     console.log(calcSum(array));
+    //У цьому коді функція calcSum призначена для обчислення суми чисел у масиві.
+    // Проте, вона використовує цикл for...of, щоб проітерувати кожен елемент
+    // масиву arr і викликати метод reduce на кожній ітерації.
+    // Це неефективно, оскільки метод reduce вже можна викликати один раз для всього масиву,
+    // щоб отримати загальну суму. У вашому випадку функція завершується після першої
+    // ітерації через оператор return, тому вона фактично обчислює суму лише
+    // першогочисла масиву.
+
+    //Ось як можна виправити функцію, щоб вона працювала правильно:
+    // let array = [22, 33, 44, 55];
+    //   function calcSum(arr) {
+    // let result = arr.reduce((sum, number) => sum + number, 0);
+    //  return result;
+    //   }
+    //  console.log(calcSum(array));
+    //У цьому випадку функція calcSum коректно використовує метод reduce
+    // один раз для обчислення суми всіх елементів масиву arr і повертає
+    // загальний результат.
+
+    //++++++++++++++++++++++++++++++++++++++
+    // let result = arr.reduce(function(sum, number) {
+    //     return sum + number;
+    // });
+    // return result;
+
+
+    //
+    // let array = [2, 3, 4, 5];
+    //     let result = array.reduce(function (sum, current) {
+    //     return sum + current;
+    // });
+    // console.log(result);
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     // let users = [
+     //     {name: 'vasaja', age:25, status: true},
+     //     {name: 'petja', age:26, status: false},
+     //     {name: 'kolja', age:30, status: true},
+     //     {name: 'nadja', age:25, status: false},
+     //     {name: 'vitja', age:31, status: true},
+     //     {name: 'vova', age:32, status: false},
+     //     {name: 'misha', age:25, status: true},
+     //     {name: 'tolja', age:33, status: false},
+     //     {name: 'david', age:25, status: true},
+     //     {name: 'issaak', age:35, status: false},
+     //     {name: 'natan', age:25, status: true},
+     // ];
+     //
+     // for(let user of users) {
+     //     console.log(user);
+     //     console.log(user.age);
+     // }
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+    //+++++++++++++++++++++++++++REDUCE+++++++++++++++++++
+    // let numbers = [11, 22, 33, 44, 55];
+    //
+    //     function sum(numbers) {
+    //          return numbers.reduce(function(accumulator, current) {
+    //                               return accumulator + current;}, 0);
+    //                               }
+    //                                 console.log(sum(numbers));
+
+    // У нас два оператора return
+    //  Первый раз return срабатывает в середине функции reduce.
+    //  Он возвращает сумму total + current для каждой итерации цикла reduce.
+    //
+    //  Второй раз return возвращает конечный результат вычисления суммы
+    //  всех элментов массива, когда цикл reduce завершит свою работу.
+    //
+    //  Пошаговый процесс работы функции:
+    //
+    //  Начальное значение total = 0.
+    // Для каждого элемента current в массиве numbers выполняется операция total + current.
+    // Результат добавляется в total.
+    // На каждой итерации этот результат возвращается и используется как новое
+    // значение total.
+    // После последней итерации метод reduce возвращает конечный результат
+    // вычисления суммы всех элементов массива numbers.
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

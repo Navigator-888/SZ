@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Loops</title>
+</head>
+<body>
+
+
+
+
+
+
+
+  <script>
+//=============Когда применять FOR а когда  FOR...OF ==========================
+// Циклы for и for...of в JavaScript используются для итерации по элементам массивов и других коллекций.
+// В зависимости от задачи и структуры данных, один из них может быть более подходящим.
+// Вот некоторые общие рекомендации о том, когда лучше использовать каждый из них:
+
+//========Цикл for
+//  Цикл for используется, когда вам нужно:
+// ----Итерация по индексам массива: Когда вам нужно работать с индексами массива или другой коллекции.
+//---- Изменение элементов массива: Когда вам нужно изменять элементы массива по их индексам.
+//----Итерация с определённым шагом: Когда вам нужно изменять счётчик цикла с определённым шагом
+//(например, пропускать каждый второй элемент).
+//---- Итерация только по части массива: Когда вам нужно итерацию по определённой части массива.
+
+//     Пример:
+//let arr = [10, 20, 30, 40, 50];
+// Использование индексов для итерации
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(`Index: ${i}, Value: ${arr[i]}`);
+// }
+
+//======Цикл for...of
+//Цикл for...of используется, когда вам нужно:
+//Итерация по значениям массива: Когда вас интересуют только значения элементов, а не их индексы.
+//Итерация по итерируемым объектам: Когда вы работаете с итерируемыми объектами
+// (массивы, строки, Map, Set и т. д.).
+//Простота и удобочитаемость: Когда вы хотите сделать код проще и понятнее,
+// особенно когда не нужно работать с индексами.
+
+//    Пример:
+// let arr = [10, 20, 30, 40, 50];
+//
+// // Итерация по значениям массива
+// for (let value of arr) {
+//     console.log(`Value: ${value}`);
+// }
+
+// ++++++++Примеры
+//+++ Изменение элементов массива:
+// let arr = [10, 20, 30, 40, 50];
+//
+// // Увеличение каждого элемента на 5
+// for (let i = 0; i < arr.length; i++) {
+//     arr[i] += 5;
+// }
+// console.log(arr);  // [15, 25, 35, 45, 55]
+
+//++Итерация по значениям массива:
+// let arr = [10, 20, 30, 40, 50];
+//
+// for (let value of arr) {
+//     console.log(value);  // 10, 20, 30, 40, 50
+// }
+
+
+//=============================================================================
+      // FOR - цикл с диапазоном. Может работать без массива
+      // FOR EACH - нужен массив + всегда работает от начала до конца
+      // FOR IN - только для объектов. Получает ключи объектов
+      //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+      //  let users = [
+      //      {name: 'vasaja', age:25, status: true},
+      //      {name: 'petja', age:26, status: false},
+      //      {name: 'kolja', age:30, status: true},
+      //      {name: 'nadja', age:25, status: false},
+      //      {name: 'vitja', age:31, status: true},
+      //      {name: 'vova', age:32, status: false},
+      //      {name: 'misha', age:25, status: true},
+      //      {name: 'tolja', age:33, status: false},
+      //      {name: 'david', age:25, status: true},
+      //      {name: 'issaak', age:35, status: false},
+      //      {name: 'natan', age:25, status: true},
+      //  ];
+
+
+
+      // let arrPeolpe = [
+      //     {id: 1, name: 'anna', age: 18, hair: 'red', gender: 'female'},
+      //     {id: 2, name: 'vasja', age: 25, hair: 'red', gender: 'male'},
+      //     {id: 3, name: 'dasha', age: 23, hair: 'red', gender: 'female'},
+      //     {id: 4, name: 'petja', age: 30, hair: 'red', gender: 'male'},
+      //     {id: 5, name: 'masha', age: 31, hair: 'red', gender: 'female'},
+      //     {id: 6, name: 'boris', age: 41, hair: 'red', gender: 'male'},
+      //     {id: 7, name: 'galina', age: 52, hair: 'red', gender: 'female'}
+      //  ];
+
+      // for (let i =0; i < arrPeolpe.length; i++) {
+        //     console.log(i);  // только индексы  от 0 до 6
+        //     let person = arrPeolpe[i];
+        //     console.log(person); // каждый элемент массива с полной информацией
+        //   console.log(arrPeolpe[3].name); //имя под индексом 3
+      //  }
+
+      // for(let person of arrPeolpe) {
+         //  console.log(person);  //  все
+          // console.log(person.name); //  только имена
+      // }
+
+     // arrPeolpe.forEach(function (arr) {
+     //     console.log(arr);
+     //
+     // })
+
+      // let users = [
+      //     {
+      //         id: 1,
+      //         name: 'vasja',
+      //         age: 20,
+      //         email: 'aaaaaa@aa.com',
+      //     },
+      //     {
+      //         id: 2,
+      //         name: 'anna',
+      //         age: 23,
+      //         email: 'bbbbbb@bb.com',
+      //     },
+      //     {
+      //         id: 3,
+      //         name: 'sasha',
+      //         age: 25,
+      //         email: 'cccccc@cc.com',
+      //     },
+      //     {
+      //         id: 4,
+      //         name: 'masha',
+      //         age: 30,
+      //         email: 'dddd@dd.com',
+      //     },
+      //     {
+      //         id: 5,
+      //         name: 'oleg',
+      //         age: 32,
+      //         email: 'eeeee@ee.com',
+      //     },
+      //
+      // ];
+      //
+      //   let getEmail =[];
+      //   users.forEach(function (user) {
+      //       getEmail.push(user.email);
+      //   })
+      //      console.log(getEmail);  // массив из email
+
+//=============================================================
+
+      // let array = [1, 'two', 3, 'four', 5, 'six', 7, 'eight'];
+      //
+      // for(let i=0; i<array.length; i++) {
+      //     let num = array[i];
+      //     let li = document.createElement('li');
+      //     li.innerText = num;
+      //     document.body.appendChild(li);
+      // }
+//=====================================================
+
+      // let arrPeolpe = [
+      //     {id: 1, name: 'anna', age: 18, hair: 'red', gender: 'female'},
+      //     {id: 2, name: 'vasja', age: 25, hair: 'red', gender: 'male'},
+      //     {id: 3, name: 'dasha', age: 23, hair: 'red', gender: 'female'},
+      //     {id: 4, name: 'petja', age: 30, hair: 'red', gender: 'male'},
+      //     {id: 5, name: 'masha', age: 31, hair: 'red', gender: 'female'},
+      //     {id: 6, name: 'boris', age: 41, hair: 'red', gender: 'male'},
+      //     {id: 7, name: 'galina', age: 52, hair: 'red', gender: 'female'}
+      //  ];
+      //       let getName = [];
+      // arrPeolpe.forEach(function (person) {
+      //     getName.push(person.name);
+      // })
+      // console.log(getName);
+//==========================================================
+
+      // let arrPeolpe = [
+      //     {id: 1, name: 'anna', age: 18, hair: 'red', gender: 'female'},
+      //     {id: 2, name: 'vasja', age: 25, hair: 'red', gender: 'male'},
+      //     {id: 3, name: 'dasha', age: 23, hair: 'red', gender: 'female'},
+      //     {id: 4, name: 'petja', age: 30, hair: 'red', gender: 'male'},
+      //     {id: 5, name: 'masha', age: 31, hair: 'red', gender: 'female'},
+      //     {id: 6, name: 'boris', age: 41, hair: 'red', gender: 'male'},
+      //     {id: 7, name: 'galina', age: 52, hair: 'red', gender: 'female'}
+      //  ];
+      //
+      // for (let i = 0; i < arrPeolpe.length; i++) {
+      //     let person = arrPeolpe[i];
+      //     console.log(person.age);
+      // }
+
+//===============================================================
+
+// Создать массив из 10 разных книг. Поля книг включают свойства title, genre,
+// year, pages. Кроме этого поле каждой книги содержит объект author со свойствами name и age.
+//
+// let bookList = [
+//     {
+//         title: "To Kill a Mockingbird",
+//         genre: "Fiction",
+//         year: 1960,
+//         pages: 281,
+//         author: {
+//             name: "Harper Lee",
+//             age: 34
+//         }
+//     },
+//     {
+//         title: "1984",
+//         genre: "Dystopian",
+//         year: 1949,
+//         pages: 328,
+//         author: {
+//             name: "George Orwell",
+//             age: 46
+//         }
+//     },
+//     {
+//         title: "Moby Dick",
+//         genre: "Adventure",
+//         year: 1851,
+//         pages: 635,
+//         author: {
+//             name: "Herman Melville",
+//             age: 32
+//         }
+//     },
+//     {
+//         title: "Pride and Prejudice",
+//         genre: "Romance",
+//         year: 1813,
+//         pages: 279,
+//         author: {
+//             name: "Jane Austen",
+//             age: 37
+//         }
+//     },
+//     {
+//         title: "The Great Gatsby",
+//         genre: "Tragedy",
+//         year: 1925,
+//         pages: 180,
+//         author: {
+//             name: "F. Scott Fitzgerald",
+//             age: 29
+//         }
+//     },
+//     {
+//         title: "War and Peace",
+//         genre: "Historical",
+//         year: 1869,
+//         pages: 1225,
+//         author: {
+//             name: "Leo Tolstoy",
+//             age: 41
+//         }
+//     },
+//     {
+//         title: "The Catcher in the Rye",
+//         genre: "Fiction",
+//         year: 1951,
+//         pages: 214,
+//         author: {
+//             name: "J.D. Salinger",
+//             age: 32
+//         }
+//     },
+//     {
+//         title: "The Hobbit",
+//         genre: "Fantasy",
+//         year: 1937,
+//         pages: 310,
+//         author: {
+//             name: "J.R.R. Tolkien",
+//             age: 45
+//         }
+//     },
+//     {
+//         title: "Crime and Punishment",
+//         genre: "Psychological",
+//         year: 1866,
+//         pages: 671,
+//         author: {
+//             name: "Fyodor Dostoevsky",
+//             age: 44
+//         }
+//     },
+//     {
+//         title: "The Odyssey",
+//         genre: "Epic",
+//         year: -800,
+//         pages: 541,
+//         author: {
+//             name: "Homer",
+//             age: 50
+//         }
+//     }
+// ];
+
+//https://content.rozetka.com.ua/goods/images/preview/342019641.jpg
+//https://content.rozetka.com.ua/goods/images/preview/266307546.jpg
+//https://www.britishbook.ua/upload/resize_cache/iblock/c25/lq7qbxmomxyyxg1zfdlyxuw0pk3wuckh/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_moby_dick.jpg
+//https://www.britishbook.ua/upload/resize_cache/iblock/c76/fksjhfh02jh4f5x55ownzm43lnvk1l3z/269_448_174b5ed2089e1946312e2a80dcd26f146/kniga_pride_and_prejudice.jpg
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//let mass = ['obj1', 'obj2', 'obj3', 'obj4', 'obj5'];
+
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+</body>
+</html>

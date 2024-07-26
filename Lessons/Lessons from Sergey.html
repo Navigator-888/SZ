@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Lessons from Sergey</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+<script>
+
+    /* ====================================== LESSONS =============================== */
+
+    //=========Расчёт налога ============================================
+    // function countTax(salary,tax) {
+    //     let result = salary - salary / 100 * tax;
+    //     console.log(result);
+    //    return result;
+    // }
+    // countTax(3456, 20);
+
+
+  //   function countTax(salary = 3000, tax = 20) {    //Параметры по умолчанию
+  //       let result = salary - salary / 100 * tax;
+  //       console.log(result);
+  //   }
+  // countTax(5000, 20);   //Аргументы, которые заменяют параметры по умолчанию
+
+
+    //========================Расчёт зарплаты=================================
+
+
+    // function countSalary (ratePerHour, workingHour) {
+    //     const salary = ratePerHour * workingHour;
+    //     console.log(salary);
+    //     return salary;
+    // }
+    // countSalary(700, 8);
+
+    //================TEMPLATE LITERALS=====================================
+
+
+
+  //   let name = "John";
+  //   let greeting = `Hello, ${name}!`;
+  //   console.log(greeting);
+
+
+
+  //   let a = 10;
+  //   let b = 20;
+  //   let result = `The sum of ${a} and ${b} is ${a + b}.`;
+  //    console.log(result); // =====> The sum of 10 and 20 is 30.
+
+
+
+  //  Припустимо, у вас є функція, яка генерує повідомлення для користувача:
+  //   function createMessage(userName, age) {
+  //       return `Hello, ${userName}! You are ${age} years old.`;
+  //   }
+  //
+  //   let message = createMessage("Alice", 30);
+  //   console.log(message);                            // =====> Hello, Alice! You are 30 years old.
+
+    // function createMessage(userName, age) {
+    //     let message = `Hello, ${userName}! You are ${age} years old.`;
+    //       return message;
+    //   }
+    //
+    //  console.log(createMessage("Alice", 30));               // =====> Hello, Alice! You are 30 years old.
+
+    //==============================================================================
+
+    //  ==================Вывод надписи в документ===============================
+
+    // function header(msg) {
+    //     let xxx = msg;
+    //     document.write(`<h1> ${xxx} </h1>`);
+    // }
+    // header();
+
+    // function page(msg = 'Welcome') {
+    //     let text = msg;
+    //     document.write(`<h1> ${text} </h1>`);
+    // }
+    // page('Fafafa');
+
+    //======================================================================
+
+    // function header(msg, tag) {
+    //     document.write(`<${tag}> ${msg} </${tag}>`);
+    // }
+    // header('Hello', 'h1');
+    // header('Hello', 'h2');
+    // header('Hello', 'h3');
+
+    //====================================================================
+
+    // function header(msg, headingType) {
+    //     if (headingType === 1) {
+    //         document.write(`<h1> ${msg} </h1>`);
+    //     } else if (headingType === 2) {
+    //         document.write(`<h2> ${msg} </h2>`);
+    //     } else if (headingType === 3) {
+    //         document.write(`<h3> ${msg} </h3>`);
+    //     } else {
+    //         document.write(`<h6> ${msg} </h6>`);
+    //     }
+    // }
+    // header('hello', 1);
+    // header('hello', 2);
+    // header('hello', 3);
+
+
+     //======================================================================
+
+    //  function header(msg, tagType,) {
+    //      document.write(`<${tagType}> ${msg}  </${tagType}>`);
+    //  }
+    //  header('hello', 'h1');
+    // header('welcome', 'h4');
+
+    //===================Добавление стилей===========================================
+
+    // function header(msg, tagType, bg) {
+    //     document.write(`<${tagType} style="background: ${bg}"> ${msg} </${tagType}>`);
+    // }
+    //
+    // header('hello', 'h1', 'red');
+    // header('okren', 'h3', 'green');
+    // header('okren', 'div', 'blue');
+
+
+    // function header(msg, tagType, bg,color) {
+    // document.write(`<${tagType} style="background: ${bg}; color:${color}"> ${msg} </${tagType}>`);
+    // }
+    //
+    // header('hello', 'h1', 'red','gold');
+    // header('okren', 'h3', 'green','gold');
+    // header('okren', 'div', 'blue','gold');
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
