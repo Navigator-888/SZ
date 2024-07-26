@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="part_3_style.css">
+    <title>First photo</title>
+</head>
+<style>
+
+    #push {
+        width: 150px;
+        height: 50px;
+        background-color: antiquewhite;
+        font-size: 30px;
+        margin-top: 5px;
+        margin-left: 200px;
+    }
+
+    .box {
+        width: 300px;
+        height: 450px;
+        background-color: ivory;
+        border: 2px solid blueviolet;
+        font-family: "Comic Sans MS";
+    }
+
+</style>
+
+
+<body>
+
+
+      <button id="push">push</button>
+
+              <div id="target"></div>
+
+      <script>
+
+          let users = [
+              {
+                  id: 11,
+                  name: 'anna',
+                  age: 19,
+                  gender: 'female',
+                  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD1Obo2OUq8RGjIloyJCSk_bktN6DByZLS76hQ1zJ46jmV9YrxxNMx3LA5r6zC3lDUSrs&usqp=CAU'
+              },
+              {
+                  id: 22,
+                  name: 'vova',
+                  age: 20,
+                  gender: 'male',
+                  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkaDPzoKXIXNR99GN3tb_xnOwHEgc8msjLraHTgZMtxKH7IFXsdiJk92ej7tAU_HaMYHk&usqp=CAU'
+              },
+              {
+                  id: 33,
+                  name: 'alla',
+                  age: 25,
+                  gender: 'female',
+                  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGOcGANLXDXhf-cM-LlsyRy77SP-OtEWNNcDxznR0ADcsPSUdJ0ZajynPeOSv6M4fsrDA&usqp=CAU'
+              },
+              {
+                  id: 44,
+                  name: 'gena',
+                  age: 29,
+                  gender: 'male',
+                  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKDIx9G_c9jiCJWezsGJ7lXrXu0lAwx5gQgrdOr4fekWfkmMGpXZxTyi0tRQt9PnpP4Ag&usqp=CAU'
+              },
+              {
+                  id: 55,
+                  name: 'inna',
+                  age: 32,
+                  gender: 'female',
+                  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBpIQFiG5yimtm6byq2aw7khxZd6cbkhDq4gi1FbdDrubGz-V-UV1KJ_wx1n8iiajgE4s&usqp=CAU'
+              },
+              {
+                  id: 66,
+                  name: 'dima',
+                  age: 41,
+                  gender: 'male',
+                  photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpG82qz8486bkwDxrI8ClRg4EVFRouht2oQ1oV4V7p_V3EHN49hv-MAvaTIDBCFa0MghI&usqp=CAU'
+              }
+          ];
+
+          let button = document.getElementById('push');
+          let userIndex = 1; // начинаем с 1, тогда 0-ой элемент уже будет при загрузке
+
+
+          function createUserBlock(user) {
+
+              let target = document.getElementById('target');
+              target.innerHTML = '';
+
+              let div = document.createElement('div');
+              div.classList.add('box');
+
+              let image = document.createElement('img');
+              image.src = user.photo;
+
+              let ul = document.createElement('ul');
+
+              for (let key in user) {
+                  if (key !== 'photo') {
+                      let li = document.createElement('li');
+                      li.innerText = key + ' : ' + user[key];
+                      ul.appendChild(li);
+                  }
+
+                  div.append(ul, image);
+              }
+              target.appendChild(div);
+          }
+         createUserBlock(users[0]); //вызываем, чтобы функция отработала и показала первого
+
+          button.onclick = function () {
+              if (userIndex < users.length) {
+                  let user = users[userIndex];
+                  userIndex++;
+                  createUserBlock(user);
+              }
+          };
+
+      </script>
+
+</body>
+</html>

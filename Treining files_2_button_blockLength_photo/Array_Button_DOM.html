@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="part_3_style.css">
+        <title>Array_Button_DOM</title>
+</head>
+
+<style>
+    #push {
+        width: 150px;
+        height: 50px;
+        background-color: antiquewhite;
+        font-size: 30px;
+        margin-top: 5px;
+        margin-left: 200px;
+    }
+
+    .stl {
+        width: 100px;
+        height: 100px;
+        background-color: antiquewhite;
+        border: 1px solid red;
+    }
+
+    img {
+        width: 250px;
+        height: 400px;
+    }
+
+
+</style>
+
+<body>
+
+
+        <button id="push">push</button>
+              <div id="target"></div>
+
+
+
+<script>
+    //=========================ПРИ НАЖАТИИ КНОПКИ НОВАЯ КНИГА==================
+
+    let bookList = [
+        {
+            title: "To Kill a Mockingbird",
+            genre: "Fiction",
+            year: 1960,
+            pages: 281,
+            author: "Harper Lee",
+            //   photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/937/8n93nxmx7xt4oc10k95x227gtfib5anz/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_little_women.jpg',
+
+        },
+        {
+            title: "1984",
+            genre: "Dystopian",
+            year: 1949,
+            pages: 328,
+            author: "George Orwell",
+            //   photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/3ff/3tm89l0a03htalhak15k2wtgp4ohb2iq/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_jane_eyre.jpg',
+
+        },
+        {
+            title: "Moby Dick",
+            genre: "Adventure",
+            year: 1851,
+            pages: 635,
+            author: "Herman Melville",
+            //    photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/f83/wvs2wecs2qoimrimv5obxuie6wnp796w/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_tales_of_mystery_and_imagination.jpg',
+
+        },
+        {
+            title: "Pride and Prejudice",
+            genre: "Romance",
+            year: 1813,
+            pages: 279,
+            author: "Jane Austen",
+            //   photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/0fd/9qloeqeilmlz3mbn2tvw199mg9k423wt/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_alice_in_wonderland.jpg',
+
+        },
+        {
+            title: "The Great Gatsby",
+            genre: "Tragedy",
+            year: 1925,
+            pages: 180,
+            author: "F. Scott Fitzgerald",
+            //    photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/c25/lq7qbxmomxyyxg1zfdlyxuw0pk3wuckh/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_moby_dick.jpg',
+
+        }
+    ];
+
+    let button = document.getElementById('push');  //находим переменную button по идентификатору push
+    let bookElemIndex = 0;  //переменная bookElemIndex, куда заносится значение после каждого прохода
+
+    function createBook(book) {             //Объявляем функцию, которая принимает массив
+
+        let target = document.getElementById('target'); //находим переменную target по идентификатору target
+        target.innerText = ''; //при каждом нажатии на кнопку, сначала происходит очистка наполнения target
+
+        let ul = document.createElement('ul');
+
+        for (let key in book) {
+
+            let li = document.createElement('li');
+            li.innerText = key + ' : ' + book[key];
+            ul.appendChild(li);
+
+        }
+        target.appendChild(ul);
+
+    }
+
+    button.onclick = function () {
+        if (bookElemIndex < bookList.length) {     //индекс сравнивается с длинной массива
+         //и если индекс меньше длины, то значит книги еще есть
+        let bookListElement = bookList[bookElemIndex]; //Тогда берётся текущий элемент из массива по индексу bookElemIndex.
+            bookElemIndex++; // индекс увеличивается на 1
+
+            createBook(bookListElement);
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // for(let book of bookList) {
+    //     let div = document.createElement('div');
+    //     let h2 = document.createElement('h2');
+    //     h2.innerText = 'BOOK SALE';
+    //
+    //     let h4 = document.createElement('h4');
+    //     h4.innerText = 'B O O K S';
+    //
+    //     let img = document.createElement('img');
+    //     img.src = book.photo;
+    //
+    //     let ul = document.createElement('ul');
+    //     for (let key in book) {
+    //         if (key !== 'photo') {
+    //             let li = document.createElement('li');
+    //             li.innerText = key + ' : ' +  book[key];
+    //             ul.appendChild(li);
+    //         }
+    //     }
+    //
+    //     div.append(h2, h4, ul, img);
+    //     document.body.appendChild(div);
+    // }
+    //===================================================
+
+    // if(bookElemIndex < bookList.length) {
+    //     let book = bookList[bookElemIndex];
+    //     bookElemIndex++;
+    // }
+
+
+</script>
+
+
+
+</body>
+</html>

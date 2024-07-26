@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="part_3_style.css">
+    <title>changing pictures</title>
+</head>
+
+<style>
+#push {
+width: 150px;
+height: 50px;
+background-color: antiquewhite;
+font-size: 30px;
+margin-top: 5px;
+margin-left: 200px;
+}
+
+.box {
+    width: 500px;
+    height: 500px;
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+}
+
+</style>
+
+<body>
+     <button id="push">push</button>
+         <div id="container"></div>
+
+<script>
+
+let seaPictures = [
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz_PczSzu4ezNzpciA-gRs-qwiRpm6reZBSud_tSo9BIxBFmrT8f1T6AEf9aXP-J2Sw1s&usqp=CAU',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuQVll07eo_eWlIIXKErkSGb4otzSZD5vN-z40doi8ochQ6M9rXM2oWW32Rg4Sr6yaQLk&usqp=CAU',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9yeWzoEO0oXOWkaDapNBxSwDKuL1tCxJ3dN_11CknYA9fhVOmpmYMI0kElQmAEEtpPls&usqp=CAU',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmx7SMWXTG7MmunTZiB9Ar7A1WPvMgeACIt5AnYce1iRMxahbqYzhHFdbo_b9L6WKTWtE&usqp=CAU',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsOy6QoBad5jU22M06J_ZHN2yVROAHEf7QBvcwMM1weryF64ugo0UWyw4TYgaG2aiBtB4&usqp=CAU',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIYK0wzE10s_Q3y41EMQousKvnVpunSm-bWh5_nHgRe5ntQ9ImmCeRId5YlDCIi9Qsqko&usqp=CAU',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTneI19hIyHYF_i3po-DXTHJyYHZErHTzDYsg0Ny3eKxf1b8MbvNMbDXr4IXnU15y6zXPI&usqp=CAU',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLMOAu0tNcu1SSYVtZyoRw3kOjTo0MJG4bBMgwlMAtNIu67E1xniddsAoPtIrSE2PNYQ0&usqp=CAU',
+'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKOCUmEra53qbxnwHK5UatAJP9lpvax41u2rZVtbsl4Id3xD_f7rlfcupDbyHYF3wuSCU&usqp=CAU'
+];
+//
+//
+
+let button = document.getElementById('push');
+let pictureIndex = 0;
+
+function createPictures(pic) {
+    let container = document.getElementById('container');
+    container.innerText = '';
+
+    let div = document.createElement('div');
+    div.classList.add('box');
+
+    let image = document.createElement('img');
+    image.src = pic;
+
+    div.appendChild(image);
+    container.appendChild(div);
+}
+
+button.onclick = function () {
+    if (pictureIndex < seaPictures.length) {      //если индекс меньше длины, то картинки ещё есть
+        let picture = seaPictures[pictureIndex]; //переменная = картинке с текущим индексом
+        pictureIndex++;                          //индекс увеличивается
+
+
+        createPictures(picture); //вызов функции для показа картинки
+    }
+};
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

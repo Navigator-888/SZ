@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="part_3_style.css">
+    <title>Passing paragraphs_2</title>
+</head>
+<style>
+    body {
+        display: flex;
+        margin-left: 20px;
+    }
+
+
+    div {
+        width: 350px;
+        height: 350px;
+        background-color: antiquewhite;
+        border: 2px solid black;
+        margin: 30px;
+        text-align: center;
+    }
+</style>
+<body>
+
+<div id="box1">
+    <p>Lorem Ipsum - это текст-"рыба"1</p>
+</div>
+
+<div id="box2">
+    <p>Lorem Ipsum - это текст-"рыба"4</p>
+    <p>Lorem Ipsum - это текст-"рыба"5</p>
+</div>
+
+<div id="box3">
+    <p>Lorem Ipsum - это текст-"рыба"4</p>
+    <p>Lorem Ipsum - это текст-"рыба"5</p>
+    <p>Lorem Ipsum - это текст-"рыба"6</p>
+    <p>Lorem Ipsum - это текст-"рыба"7</p>
+    <p>Lorem Ipsum - это текст-"рыба"8</p>
+    <p>Lorem Ipsum - это текст-"рыба"9</p>
+</div>
+
+<script>
+    // Получаем доступ к блокам
+    let box1 = document.getElementById('box1');
+    let box2 = document.getElementById('box2');
+    let box3 = document.getElementById('box3');
+
+    // Функция для перемещения параграфов
+    function moveParagraphs(boxout, boxin, num) {
+        for (let i = 0; i < num; i++) {
+            if (boxout.children.length > 0) {
+                boxin.appendChild(boxout.children[0]);
+            }
+        }
+    }
+
+    // Перемещаем параграфы
+    moveParagraphs(box3, box1, 2);
+    moveParagraphs(box3, box2, 1);
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

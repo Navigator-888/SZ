@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="part_3_style.css">
+    <title>Equalize Paragraphs</title>
+</head>
+
+<style>
+    body {
+        display: flex;
+        margin-left: 20px;
+    }
+
+
+    div {
+        width: 350px;
+        height: 350px;
+        background-color: antiquewhite;
+        border: 2px solid black;
+        margin: 30px;
+        text-align: center;
+    }
+</style>
+
+
+<body>
+
+
+<div id="block1">
+
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+
+</div>
+
+<div id="block2">
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+
+</div>
+
+<div id="block3">
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+    <p>Lorem Ipsum - это текст-"рыба"</p>
+
+</div>
+
+
+<script>
+//======ШАГ 1 Получаем доступ к трём блокам div
+    let block1 = document.getElementById('block1');
+    let block2 = document.getElementById('block2');
+    let block3 = document.getElementById('block3');
+console.log(block1);  //Всё в блоке
+
+//====ШАГ 2  Собираем все параграфы из всех блоков в один массив
+    let paragraphs = [
+        ...block1.querySelectorAll('p'),
+        ...block2.querySelectorAll('p'),
+        ...block3.querySelectorAll('p')
+    ];
+console.log(paragraphs); //Массив из 12 параграфов
+
+//====ЗАМЕНА ОПЕРАТОРА РАСШИРЕНИЯ===========
+//====1.
+//можно воспользоваться методом Array.prototype.concat для объединения массивов.
+// let paragraphs = block1.querySelectorAll('p');
+// paragraphs = Array.prototype.concat.call(paragraphs, block2.querySelectorAll('p'));
+// paragraphs = Array.prototype.concat.call(paragraphs, block3.querySelectorAll('p'));
+
+//===2.
+//можно использовать метод Array.from для преобразования NodeList (результат querySelectorAll) в массив, а затем объединить массивы с помощью concat:
+// let paragraphs = Array.from(block1.querySelectorAll('p'))
+//     .concat(Array.from(block2.querySelectorAll('p')))
+//     .concat(Array.from(block3.querySelectorAll('p')));
+
+//===3.
+//используя Array.prototype.push.apply для объединения массивов:
+// let paragraphs = Array.from(block1.querySelectorAll('p'));
+// Array.prototype.push.apply(paragraphs, block2.querySelectorAll('p'));
+// Array.prototype.push.apply(paragraphs, block3.querySelectorAll('p'));
+
+
+   // block1 — это элемент DOM, который мы получили с помощью document.getElementById('block1').
+  //  querySelectorAll('p') — это метод, который возвращает все элементы <p>, являющиеся потомками block1, в виде статического NodeList.
+  //  ...block1.querySelectorAll('p')  ------  Оператор расширения ... используется для преобразования NodeList в массив.
+  //  Это позволяет объединять параграфы из разных блоков в один массив, что упрощает дальнейшую манипуляцию с ними.
+
+//====ШАГ 3  Рассчитываем сколько параграфов должно быть в каждом блоке
+    let totalParagraphs = paragraphs.length;
+    let paragraphsPerBlock = Math.floor(totalParagraphs / 3);
+             console.log(paragraphsPerBlock);   //по 4 параграфа
+
+//ШАГ 4    Очищаем все блоки
+    block1.innerHTML = '';
+    block2.innerHTML = '';
+    block3.innerHTML = '';
+
+//===ШАГ 5  Функция для добавления параграфов в блок
+    function addParagraphsToBlock(block, prg) {
+        for (let i = 0; i < prg; i++) {
+            if (paragraphs.length > 0) {
+                block.appendChild(paragraphs.shift());
+            }
+        }
+    }
+
+
+//==ШАГ 6== Добавляем параграфы в каждый блок
+    addParagraphsToBlock(block1, paragraphsPerBlock);
+    addParagraphsToBlock(block2, paragraphsPerBlock);
+    addParagraphsToBlock(block3, paragraphsPerBlock);
+
+//==ШАГ 7== Добавляем оставшиеся параграфы(в случае, если оставшееся количество не делтся на 3. Добавление происходит поочерёдно в каждый блок)
+//     while (paragraphs.length > 0) {
+//         if (paragraphs.length > 0) block1.appendChild(paragraphs.shift());
+//         if (paragraphs.length > 0) block2.appendChild(paragraphs.shift());
+//         if (paragraphs.length > 0) block3.appendChild(paragraphs.shift());
+//     }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="part_3_style.css">
+    <title>Passing paragraphs</title>
+</head>
+
+  <style>
+      body {
+          display: flex;
+          margin-left: 20px;
+      }
+
+
+      div {
+          width: 350px;
+          height: 350px;
+          background-color: antiquewhite;
+          border: 2px solid black;
+          margin: 30px;
+          text-align: center;
+      }
+  </style>
+
+<body>
+
+   <div id="box1">
+       <p>Lorem Ipsum - это текст-"рыба"1</p>
+       <p>Lorem Ipsum - это текст-"рыба"2</p>
+       <p>Lorem Ipsum - это текст-"рыба"3</p>
+   </div>
+
+
+   <div id="box2">
+       <p>Lorem Ipsum - это текст-"рыба"4</p>
+       <p>Lorem Ipsum - это текст-"рыба"5</p>
+       <p>Lorem Ipsum - это текст-"рыба"6</p>
+       <p>Lorem Ipsum - это текст-"рыба"7</p>
+       <p>Lorem Ipsum - это текст-"рыба"8</p>
+       <p>Lorem Ipsum - это текст-"рыба"9</p>
+   </div>
+
+<script>
+    //================Переместить 4 параграфа====================
+    // Находим блоки box1 и box2
+    let box1 = document.getElementById('box1');
+    let box2 = document.getElementById('box2');
+
+    // Получаем все параграфы из box2
+    let paragraphs = box2.getElementsByTagName('p');
+
+    // Перемещаем первые 4 параграфа из box2 в box1
+
+       for (let i = 0; i < 4; i++) {
+        if (paragraphs.length > 0) {
+            box1.appendChild(paragraphs[0]);
+        }
+    }
+
+</script>
+
+
+</body>
+</html>
