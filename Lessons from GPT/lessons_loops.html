@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="gpt_lessons.css">
+    <title>Loops</title>
+</head>
+<body>
+
+
+
+<script>
+ //+++++++++++ FOR+++++++++++++++++++++++++++++++++++++++
+ // --------------Лёгкий уровень
+ // Вывод чисел от 1 до 10
+ // for (let i = 1; i <= 10; i++) {
+ //     console.log(i);
+ // }
+ // // Вывод: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+ //
+ // ----------------Средний уровень
+ // Нахождение суммы чисел в массиве
+ // let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+ // let sum = 0;
+ //
+ // for (let i = 0; i < numbers.length; i++) {
+ //     sum += numbers[i];
+ // }
+ //
+ // console.log('Сумма:', sum); // Вывод: Сумма: 55
+ //
+ // ---------------------Сложный уровень
+ // Фильтрация массива объектов по определённому условию
+ // let students = [
+ //     { name: 'John', grade: 85 },
+ //     { name: 'Jane', grade: 92 },
+ //     { name: 'Mike', grade: 78 },
+ //     { name: 'Emily', grade: 89 },
+ //     { name: 'Chris', grade: 94 }
+ // ];
+ //
+ // let passedStudents = [];
+ //
+ // for (let i = 0; i < students.length; i++) {
+ //     if (students[i].grade >= 90) {
+ //         passedStudents.push(students[i]);
+ //     }
+ // }
+ //
+ // console.log('Студенты с оценками 90 и выше:', passedStudents);
+ // // Вывод: Студенты с оценками 90 и выше: [{ name: 'Jane', grade: 92 }, { name: 'Chris', grade: 94 }]
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ //+++++++++++++++FOR ...OF+++++++++++++++++++++++++++++
+
+ // Лёгкий уровень
+ // Вывод элементов массива
+ // const fruits = ['apple', 'banana', 'cherry'];
+ //
+ // for (const fruit of fruits) {
+ //     console.log(fruit);
+ // }
+ // // Вывод: apple, banana, cherry
+ //
+ // Средний уровень
+ // Подсчёт общей стоимости товаров в корзине
+ // const cart = [
+ //     { item: 'apple', price: 1.2 },
+ //     { item: 'banana', price: 0.8 },
+ //     { item: 'cherry', price: 2.5 },
+ //     { item: 'orange', price: 1.5 }
+ // ];
+ //
+ // let totalCost = 0;
+ //
+ // for (const product of cart) {
+ //     totalCost += product.price;
+ // }
+ //
+ // console.log('Общая стоимость:', totalCost); // Вывод: Общая стоимость: 6.0
+ //
+ // Сложный уровень
+ // Подсчёт частоты элементов в массиве
+ // const words = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+ //
+ // const frequency = {};
+ //
+ // for (const word of words) {
+ //     if (frequency[word]) {
+ //         frequency[word]++;
+ //     } else {
+ //         frequency[word] = 1;
+ //     }
+ // }
+ //
+ // console.log('Частота слов:', frequency);
+ // // Вывод: Частота слов: { apple: 3, banana: 2, orange: 1 }
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ //+++++++++++++++FOR...IN++++++++++++++++++++++++++++
+ // Лёгкий уровень
+ // Вывод свойств объекта
+ // const person = {
+ //     name: 'Alice',
+ //     age: 25,
+ //     occupation: 'Engineer'
+ // };
+ //
+ // for (const key in person) {
+ //     console.log(`${key}: ${person[key]}`);
+ // }
+ // // Вывод:
+ // // name: Alice
+ // // age: 25
+ // // occupation: Engineer
+ //
+ // Средний уровень
+ // Проверка свойств объекта на наличие значения
+ // const user = {
+ //     username: 'john_doe',
+ //     email: 'john@example.com',
+ //     isActive: true,
+ //     lastLogin: '2024-07-21'
+ // };
+ //
+ // function checkProperties(obj) {
+ //     for (const key in obj) {
+ //         if (!obj[key]) {
+ //             return false;
+ //         }
+ //     }
+ //     return true;
+ // }
+ //
+ // console.log(checkProperties(user)); // Вывод: true
+ //
+ // Сложный уровень
+ // Слияние двух объектов с одинаковыми ключами
+ // const obj1 = {
+ //     a: 1,
+ //     b: 2,
+ //     c: 3
+ // };
+ //
+ // const obj2 = {
+ //     a: 4,
+ //     b: 5,
+ //     c: 6
+ // };
+ //
+ // function mergeObjects(obj1, obj2) {
+ //     const result = {};
+ //     for (const key in obj1) {
+ //         if (obj1.hasOwnProperty(key) && obj2.hasOwnProperty(key)) {
+ //             result[key] = obj1[key] + obj2[key];
+ //         }
+ //     }
+ //     return result;
+ // }
+ //
+ // const mergedObj = mergeObjects(obj1, obj2);
+ // console.log(mergedObj); // Вывод: { a: 5, b: 7, c: 9 }
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ //++++++++++++++++FOR...EACH+++++++++++++++++++++++++++
+ // Лёгкий уровень
+ // Вывод элементов массива
+ // const fruits = ['apple', 'banana', 'cherry'];
+ //
+ // fruits.forEach(function(fruit) {
+ //     console.log(fruit);
+ // });
+ // // Вывод:
+ // // apple
+ // // banana
+ // // cherry
+ //
+ // Средний уровень
+ // Создание нового массива с длиной каждого слова
+ // const words = ['hello', 'world', 'javascript', 'is', 'awesome'];
+ //
+ // const wordLengths = [];
+ // words.forEach(function(word) {
+ //     wordLengths.push(word.length);
+ // });
+ //
+ // console.log(wordLengths); // Вывод: [5, 5, 10, 2, 7]
+ //
+ // Сложный уровень
+ // Подсчёт суммы значений массива объектов
+ // const transactions = [
+ //     { id: 1, amount: 100 },
+ //     { id: 2, amount: 200 },
+ //     { id: 3, amount: -50 },
+ //     { id: 4, amount: -75 },
+ //     { id: 5, amount: 300 }
+ // ];
+ //
+ // let totalAmount = 0;
+ // transactions.forEach(function(transaction) {
+ //     totalAmount += transaction.amount;
+ // });
+ //
+ // console.log(totalAmount); // Вывод: 475
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ //+++++++++++++++++++++WHILE+++++++++++++++++++++++++
+ //------------- Лёгкий уровень
+ // Вывод чисел от 1 до 5
+ // let i = 1;
+ //
+ // while (i <= 5) {
+ //     console.log(i);
+ //     i++;
+ // }
+ // // Вывод:
+ // // 1
+ // // 2
+ // // 3
+ // // 4
+ // // 5
+ //
+ // ----------------Средний уровень
+ // Сумма чисел в массиве
+ // const numbers = [10, 20, 30, 40, 50];
+ // let sum = 0;
+ // let index = 0;
+ //
+ // while (index < numbers.length) {
+ //     sum += numbers[index];
+ //     index++;
+ // }
+ //
+ // console.log(sum); // Вывод: 150
+
+ // let numbers = [11, 22, 33, 44, 55];
+ // let sum = 0;
+ // let index = 0;
+ //
+ // while (index < numbers.length) {
+ //     sum = sum + numbers[index];
+ //     index++;
+ // }
+ // console.log(sum);
+
+ //---------------------- Сложный уровень
+ // Удаление всех элементов из массива, пока массив не станет пустым
+ // let items = ['item1', 'item2', 'item3', 'item4'];
+ //
+ // while (items.length > 0) {
+ //     console.log(`Removing: ${items.pop()}`);
+ // }
+ //
+ // console.log(items); // Вывод: []
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+</script>
+
+</body>
+</html>

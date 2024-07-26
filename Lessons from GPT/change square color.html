@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="gpt_lessons.css">
+    <title>Change square color</title>
+    <style>
+        .block {
+            width: 70px;
+            height: 70px;
+            border: 2px solid black;
+            display: inline-block;
+            margin: 5px;
+        }
+        .green {
+            background-color: green;
+        }
+        .green:hover {
+            background-color: yellow;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="container"></div>
+
+<script>
+ // 1.   При помощи DOM и цикла вывести на страницу 15 блоков <div> размером 50px на 50px и границей 2px solid black.
+ //     Каждый третий блок будет зелёным. При наведении на зелёный блок он превращается в круг жёлтого цвета.
+
+ let container = document.getElementById('container');
+
+ for (let i = 1; i <= 15; i++) {
+     let div = document.createElement('div');
+     div.className = 'block';
+     if (i % 3 === 0) {
+         div.classList.add('green');
+
+     }
+     container.appendChild(div);
+ }
+
+</script>
+
+</body>
+</html>

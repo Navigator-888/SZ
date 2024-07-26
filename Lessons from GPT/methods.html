@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="gpt_lessons.css">
+    <title>Methods</title>
+</head>
+
+<body>
+
+
+
+<script>
+    //=============== 1. push ======================================
+    // Задача 1: Добавьте элемент в конец массива и верните новый массив.
+
+    // let arr = [1, 2, 3];
+    // arr.push(4); // [1, 2, 3, 4]
+    // let drinkables = ['coke', 'orange', 'juice', 'beer'];
+    // drinkables.push('vodka');
+    // console.log(drinkables);
+
+    //Задача 2: Создайте функцию, которая добавляет несколько элементов в конец массива.
+               // function addElementsToEnd(array, ...elements) {
+              //     elements.forEach(element => array.push(element));
+              //     return array;
+             // }
+             // addElementsToEnd([1, 2, 3], 4, 5, 6); // [1, 2, 3, 4, 5, 6]
+
+    // let drinkables = ['coke', 'orange', 'juice', 'beer'];
+    //
+    // function addDrinks(arr, ...newDrinks) {
+    //     arr.push(...newDrinks);
+    // }
+    //
+    // addDrinks(drinkables, 'vodka', 'whiskey', 'wine');
+    //
+    // console.log(drinkables);
+
+    //===========================================================================
+// ===============================  2. pop  ====================================
+//     Задача 1: Удалите последний элемент из массива и верните его.
+//         let arr = [1, 2, 3, 4];
+//     let lastElement = arr.pop(); // lastElement = 4, arr = [1, 2, 3]
+//     let carList = ['subaru', 'ford', 'opel', 'benz', 'mazda'];
+//     let newCarList = carList.pop();
+//     console.log(carList);
+//     console.log(newCarList);
+
+//     Задача 2: Напишите функцию, которая удаляет последний элемент из массива и возвращает новый массив без последнего элемента.
+//         function removeLastElement(array) {
+//         array.pop();
+//         return array;
+//     }
+//     removeLastElement([1, 2, 3, 4]); // [1, 2, 3]
+
+    // let carList = ['subaru', 'ford', 'opel', 'benz', 'mazda'];
+    //
+    //   function removeLastCar(cars) {
+    //     cars.pop();
+    //     return cars;
+    //   }
+    //    console.log(removeLastCar(carList));
+    //
+
+//===================================================================================
+//======================================3. shift ======================================
+//     Задача 1: Удалите первый элемент из массива и верните его.
+//         let arr = [1, 2, 3, 4];
+//     let firstElement = arr.shift(); // firstElement = 1, arr = [2, 3, 4]
+//     let users = ['anna', 'vova', 'olga', 'masha', 'kolja', 'oleg'];
+//     let removeFirstUser = users.shift();
+//     console.log(removeFirstUser);
+//     console.log(users);
+
+//     Задача 2: Напишите функцию, которая удаляет первый элемент из массива и возвращает новый массив без первого элемента.
+//         function removeFirstElement(array) {
+//         array.shift();
+//         return array;
+//     }
+//     removeFirstElement([1, 2, 3, 4]); // [2, 3, 4]
+
+    // let users = ['anna', 'vova', 'olga', 'masha', 'kolja', 'oleg'];
+    //
+    // function removeFirstUser(array) {
+    //     array.shift();
+    //            console.log(array);
+    //                      return array;
+    //
+    // }
+    //      console.log(removeFirstUser(users));
+
+//=========================================================================================
+//=======================4. splice ================================================
+//     Задача 1: Удалите два элемента, начиная с индекса 1, и верните массив удалённых элементов.
+//         let arr = [1, 2, 3, 4];
+//     let removedElements = arr.splice(1, 2); // removedElements = [2, 3], arr = [1, 4]
+ //                0        1       2        3        4       5
+ //    let users = ['anna', 'vova', 'olga', 'masha', 'kolja', 'oleg'];
+ //    let removeName = users.splice(3, 2);
+ //    console.log(users);
+ //    console.log(removeName);
+
+//     Задача 2: Напишите функцию, которая заменяет два элемента в массиве, начиная с индекса 2, новыми элементами.
+//         function replaceElements(array, index, deleteCount, ...newElements) {
+//         array.splice(index, deleteCount, ...newElements);
+//         return array;
+//     }
+//     replaceElements([1, 2, 3, 4, 5], 2, 2, 'a', 'b'); // [1, 2, 'a', 'b', 5]
+
+    // let users = ['anna', 'vova', 'olga', 'masha', 'kolja', 'oleg'];
+    //
+    // function removeName(array) {
+    //     let newArray = array.splice(1, 3);
+    //     console.log(users);
+    //     return newArray;
+    // }
+    //
+    // console.log(removeName(users));
+    //
+
+//=====================================================================================
+//===============================================5. split ==================
+//     Задача 1: Разделите строку по пробелам и верните массив слов.
+//         let str = "Hello world, how are you?";
+//     let words = str.split(' '); // ["Hello", "world,", "how", "are", "you?"]
+
+    // let phrase = 'Hello everyone, my name is Sergey';
+    //
+    // let newPhrase = phrase.split(' '); //если с пробелом, то каждое слово. Если без пробела - то каждая буква
+    // console.log(newPhrase);
+
+
+//     Задача 2: Напишите функцию, которая разбивает строку по запятым.
+//         function splitByComma(string) {
+//         return string.split(',');
+//     }
+//     splitByComma("apple,banana,cherry"); // ["apple", "banana", "cherry"]
+
+    // let str = "Hello world, how are you?";
+    //
+    // function splitByComma(str) {
+    //     let newString = str.split(' ');
+    //     return newString;
+    // }
+    //
+    // console.log(splitByComma(str));    //['Hello', 'world,', 'how', 'are', 'you?']
+
+//=============================================================================
+//===================================6. join ====================================
+//     Задача 1: Объедините массив строк в одну строку, разделённую пробелами.
+//         let arr = ["Hello", "world", "how", "are", "you?"];
+//     let str = arr.join(' '); // "Hello world how are you?"
+
+//     Задача 2: Напишите функцию, которая объединяет массив элементов в строку, разделённую дефисами.
+//         function joinWithHyphen(array) {
+//         return array.join('-');
+//     }
+//     joinWithHyphen(["apple", "banana", "cherry"]); // "apple-banana-cherry"
+//==================================================================================
+//================================7. slice =======================================
+//     Задача 1: Возьмите подмассив из первых трёх элементов массива.
+//         let arr = [1, 2, 3, 4, 5];
+//     let subArray = arr.slice(0, 3); // [1, 2, 3]
+//     Задача 2: Напишите функцию, которая возвращает последние два элемента массива.
+//         function getLastTwoElements(array) {
+//         return array.slice(-2);
+//     }
+//     getLastTwoElements([1, 2, 3, 4, 5]); // [4, 5]
+
+    // let arr = [1, 2, 3, 4, 5];
+    // let newArr = arr.slice(0, 3);
+    // console.log(newArr);
+
+    // let array = [3, 4, 5, 6, 7, 8];
+    //
+    // function getLastThreeElem(arr) {
+    //     let newArray = arr.slice(0, 3);
+    //     return newArray;
+    // }
+    //
+    // console.log(getLastThreeElem(array));
+
+//===============================================================================
+//===============================8. concat ====================================
+//     Задача 1: Объедините два массива в один.
+//         let arr1 = [1, 2, 3];
+//     let arr2 = [4, 5, 6];
+//     let combinedArray = arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
+
+//     Задача 2: Напишите функцию, которая объединяет несколько массивов в один.
+//         function mergeArrays(...arrays) {
+//         return arrays.reduce((acc, curr) => acc.concat(curr), []);
+//     }
+//     mergeArrays([1, 2], [3, 4], [5, 6]); // [1, 2, 3, 4, 5, 6]
+//================================================================================
+//==================================9. map ====================================
+//     Задача 1: Увеличьте каждый элемент массива на 1.
+//     let arr = [1, 2, 3, 4];
+//     let newArr = arr.map(x => x + 1); // [2, 3, 4, 5]
+
+    // let arr = [2, 2, 3, 3];
+    // let newArr = arr.map(num => num * num);
+    //
+    // console.log(newArr);
+
+//     Задача 2: Напишите функцию, которая преобразует массив строк в массив их длин.
+//         function getStringLengths(array) {
+//         return array.map(str => str.length);
+//     }
+//     getStringLengths(["apple", "banana", "cherry"]); // [5, 6, 6]
+
+    // Лёгкий уровень
+    // Задача 1: Преобразование массива чисел в массив их квадратов
+    // Описание: Дан массив чисел. Напишите функцию, которая использует map для создания нового массива, содержащего квадраты этих чисел.
+    //     let numbers = [1, 2, 3, 4, 5];
+    // let squares = numbers.map(num => num * num);
+    //     console.log(squares); // [1, 4, 9, 16, 25]
+    //
+    // Задача 2: Преобразование массива строк в верхний регистр
+    // Описание: Дан массив строк. Напишите функцию, которая использует map для создания нового массива, где все строки преобразованы в верхний регистр.
+    //     let strings = ['hello', 'world', 'javascript'];
+    // let uppercased = strings.map(str => str.toUpperCase());
+    // console.log(uppercased); // ['HELLO', 'WORLD', 'JAVASCRIPT']
+    //
+    // Средний уровень
+    // Задача 3: Преобразование массива объектов
+    // Описание: Дан массив объектов, представляющих пользователей, каждый объект имеет свойства firstName и lastName.
+    //           Напишите функцию, которая использует map для создания нового массива объектов, содержащих полные имена пользователей.
+    //     let users = [
+    //     { firstName: 'John', lastName: 'Doe' },
+    //     { firstName: 'Jane', lastName: 'Smith' },
+    //     { firstName: 'Emily', lastName: 'Jones' }
+    // ];
+    // let fullNames = users.map(user => ({
+    //     fullName: `${user.firstName} ${user.lastName}`
+    // }));
+    // console.log(fullNames);
+    // // [{ fullName: 'John Doe' }, { fullName: 'Jane Smith' }, { fullName: 'Emily Jones' }]
+    //
+    // Задача 4: Преобразование массива цен с налогом
+    // Описание: Дан массив чисел, представляющих цены товаров. Напишите функцию, которая использует map для создания нового массива, содержащего цены с добавленным налогом (например, 20%).
+    //     let prices = [10, 20, 30, 40, 50];
+    // let taxRate = 0.2;
+    // let pricesWithTax = prices.map(price => price + price * taxRate);
+    //      console.log(pricesWithTax); // [12, 24, 36, 48, 60]
+    //
+    // Сложный уровень
+    // Задача 5: Преобразование массива объектов с пересчётом значений
+    // Описание: Дан массив объектов, представляющих товары, каждый объект имеет свойства name, quantity и price.
+    //     Напишите функцию, которая использует map для создания нового массива объектов, содержащих общее значение (количество * цена) для каждого товара.
+    //     let products = [
+    //     { name: 'Apple', quantity: 10, price: 2 },
+    //     { name: 'Banana', quantity: 5, price: 1 },
+    //     { name: 'Cherry', quantity: 20, price: 3 }
+    // ];
+    //
+    // let totalValues = products.map(product => ({
+    //     name: product.name,
+    //     totalValue: product.quantity * product.price
+    // }));
+    //
+    // console.log(totalValues);
+    // // [{ name: 'Apple', totalValue: 20 }, { name: 'Banana', totalValue: 5 }, { name: 'Cherry', totalValue: 60 }]
+    //
+    // Задача 6: Преобразование и фильтрация массива объектов
+    // Описание: Дан массив объектов, представляющих сотрудников, каждый объект имеет свойства name и salary.
+    //     Напишите функцию, которая использует map для создания нового массива, содержащего имена сотрудников,
+    //     зарплата которых выше заданного значения, а затем создаёт массив имен этих сотрудников.
+    //     let employees = [
+    //     { name: 'Alice', salary: 50000 },
+    //     { name: 'Bob', salary: 60000 },
+    //     { name: 'Charlie', salary: 40000 }
+    // ];
+    //
+    // let threshold = 45000;
+    // let highEarners = employees
+    //     .filter(employee => employee.salary > threshold)
+    //     .map(employee => employee.name);
+    //
+    // console.log(highEarners); // ['Alice', 'Bob']
+
+    //============================================================================
+//===============================10. reduce ===================================
+//     Задача 1: Найдите сумму всех элементов массива.
+//         let arr = [1, 2, 3, 4];
+//     let sum = arr.reduce((acc, curr) => acc + curr, 0); // 10
+//     Задача 2: Напишите функцию, которая считает количество вхождений каждого элемента в массиве.
+//         function countOccurrences(array) {
+//         return array.reduce((acc, curr) => {
+//             acc[curr] = (acc[curr] || 0) + 1;
+//             return acc;
+//         }, {});
+//     }
+//     countOccurrences(["apple", "banana", "apple", "cherry", "banana", "apple"]);
+//     // { apple: 3, banana: 2, cherry: 1 }
+//========================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+
+</html>
