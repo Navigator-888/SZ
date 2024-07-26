@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>DOM_3</title>
+    <style>
+        /*.menu {*/
+        /*    display: flex;*/
+        /*    list-style: none;*/
+        /*    justify-content: space-evenly;*/
+        /*    border-bottom: 1px solid silver;*/
+        /*}*/
+
+        /*.menu-bottom {*/
+        /*    border-bottom: 0;*/
+        /*    border-top: 1px solid black;*/
+        /*}*/
+    </style>
+
+</head>
+
+
+<body>
+<!--<header>-->
+<!--    <ul class="menu">-->
+<!--        <li>menu1</li>-->
+<!--        <li>menu2</li>-->
+<!--        <li>menu3</li>-->
+<!--        <li>menu4</li>-->
+<!--    </ul>-->
+<!--</header>-->
+
+
+
+<!--                <div class="container"></div>-->
+
+<!--                 <div class="target"></div>-->
+
+
+
+<!--<footer>-->
+<!--    <ul class="menu menu-bottom">-->
+<!--        <li>menu1</li>-->
+<!--        <li>menu2</li>-->
+<!--        <li>menu3</li>-->
+<!--        <li>menu4</li>-->
+<!--    </ul>-->
+
+<!--</footer>-->
+
+
+
+<script>
+    // let products = [
+    //     {
+    //         title: 'milk',
+    //         price: 22,
+    //         image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+    //     },
+    //     {
+    //         title: 'juice',
+    //         price: 27,
+    //         image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+    //     },
+    //     {
+    //         title: 'tomato',
+    //         price: 47,
+    //         image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+    //     },
+    //     {
+    //         title: 'tea',
+    //         price: 15,
+    //         image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+    //     },
+    // ];
+    //
+    //
+    // function productDivCreator(product,container) {
+    //
+    //     let div = document.createElement('div');
+    //
+    //     let h2 = document.createElement('h2');
+    //     h2.innerText = product.title + ' ' + product.price;
+    //
+    //     let img = document.createElement('img');
+    //     img.src = product.image
+    //
+    //
+    //     div.appendChild(h2);
+    //     div.appendChild(img);
+    //
+    //     container.appendChild(div);
+    //
+    // }
+    //
+    // products.forEach(product => {
+    //     productDivCreator(product,document.getElementsByClassName('container')[0]);
+    //     productDivCreator(product,document.getElementsByClassName('target')[0]);
+    // })
+
+//++++++++++++++++++++++++++++Объяснение кода++++++++++++++++++++++++++++++++++++++
+
+    // function productDivCreator(product, container) {
+    //     let div = document.createElement('div'); // Создает элемент <div>
+    //
+    //     let h2 = document.createElement('h2'); // Создает элемент <h2>
+    //     h2.innerText = product.title + ' ' + product.price; // Устанавливает текст для <h2>
+    //
+    //     let img = document.createElement('img'); // Создает элемент <img>
+    //     img.src = product.image; // Устанавливает атрибут src для <img>
+    //
+    //     div.appendChild(h2); // Вставляет <h2> внутрь <div>
+    //     div.appendChild(img); // Вставляет <img> внутрь <div>
+    //
+    //     container.appendChild(div); // Вставляет <div> внутрь переданного контейнера
+    // }
+
+  //  1.Создание элемента <div>:
+   // let div = document.createElement('div');   //  Создает новый элемент <div>.
+
+  // 2.   Создание элемента <h2>:
+    //  let h2 = document.createElement('h2');                  //Создает элемент <h2> и устанавливает его текстовое
+  //       h2.innerText = product.title + ' ' + product.price;  //объединяя product.title и product.price.
+
+  // 3.Создание элемента <img>:
+    // let img = document.createElement('img');  //Создает элемент <img> и устанавливает его источник
+    // img.src = product.image;                  //изображения (src) равным product.image.
+
+ // 4. Добавление <h2> и <img> в <div>:
+    //div.appendChild(h2);
+    //div.appendChild(img);      //Вставляет элементы <h2> и <img> внутрь <div>.
+
+ // 5.Добавление <div> в контейнер:
+ //container.appendChild(div);       //Вставляет созданный <div> внутрь указанного контейнера (container).
+
+
+// Использование функции productDivCreator
+//     products.forEach(product => {
+//         productDivCreator(product, document.getElementsByClassName('container')[0]);
+//         productDivCreator(product, document.getElementsByClassName('target')[0]);
+//     });
+
+    //1. Перебор массива products:
+    // products.forEach(product => {
+    //     // код
+    // });          //Использует метод forEach для перебора каждого элемента массива products.
+
+    //2. Создание и добавление элементов для каждого продукта:
+    // productDivCreator(product, document.getElementsByClassName('container')[0]);
+    // productDivCreator(product, document.getElementsByClassName('target')[0]);
+   // Для каждого продукта вызывается функция productDivCreator,
+    // которая создает элементы и добавляет их в два различных
+    // контейнера: document.getElementsByClassName('container')[0]
+    // и document.getElementsByClassName('target')[0].
+
+
+    // Пример использования
+    // Предположим, у нас есть следующий массив products:
+    //
+    // ++++++++++javascript
+    // Копировать код
+    // let products = [
+    //     {title: 'Product 1', price: 100, image: 'image1.jpg'},
+    //     {title: 'Product 2', price: 200, image: 'image2.jpg'},
+    //     // и так далее
+    // ];
+    // И следующие элементы в HTML:
+    //
+    // +++++++++++html
+    // Копировать код
+    // <div class="container"></div>
+    // <div class="target"></div>
+
+    // После выполнения кода, каждый продукт из массива будет отображен в обоих
+    // контейнерах (.container и .target) с созданными элементами <div>,
+    // содержащими <h2> с названием и ценой продукта, и <img> с изображением продукта.
+    //
+    //
+    //
+    //
+    //
+    //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>

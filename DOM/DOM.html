@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>DOM</title>
+
+
+</head>
+
+
+<body>
+
+
+<script>
+
+
+    // let bookList = [
+    //     {
+    //         title: "To Kill a Mockingbird",
+    //         genre: "Fiction",
+    //         year: 1960,
+    //         pages: 281,
+    //         author: "Harper Lee",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/937/8n93nxmx7xt4oc10k95x227gtfib5anz/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_little_women.jpg',
+    //
+    //     },
+    //     {
+    //         title: "1984",
+    //         genre: "Dystopian",
+    //         year: 1949,
+    //         pages: 328,
+    //         author: "George Orwell",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/3ff/3tm89l0a03htalhak15k2wtgp4ohb2iq/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_jane_eyre.jpg',
+    //
+    //     },
+    //     {
+    //         title: "Moby Dick",
+    //         genre: "Adventure",
+    //         year: 1851,
+    //         pages: 635,
+    //         author: "Herman Melville",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/f83/wvs2wecs2qoimrimv5obxuie6wnp796w/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_tales_of_mystery_and_imagination.jpg',
+    //
+    //     },
+    //     {
+    //         title: "Pride and Prejudice",
+    //         genre: "Romance",
+    //         year: 1813,
+    //         pages: 279,
+    //         author: "Jane Austen",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/0fd/9qloeqeilmlz3mbn2tvw199mg9k423wt/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_alice_in_wonderland.jpg',
+    //
+    //     },
+    //     {
+    //         title: "The Great Gatsby",
+    //         genre: "Tragedy",
+    //         year: 1925,
+    //         pages: 180,
+    //         author: "F. Scott Fitzgerald",
+    //         photo: 'https://www.britishbook.ua/upload/resize_cache/iblock/c25/lq7qbxmomxyyxg1zfdlyxuw0pk3wuckh/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_moby_dick.jpg',
+    //
+    //     }
+    // ];
+    //
+    //
+    // for(let book of bookList) {
+    //     let div = document.createElement('div');
+    //     let h2 = document.createElement('h2');
+    //     h2.innerText = 'BOOK SALE';
+    //
+    //     let h4 = document.createElement('h4');
+    //     h4.innerText = 'B O O K S';
+    //
+    //     let img = document.createElement('img');
+    //     img.src = book.photo;
+    //
+    //     let ul = document.createElement('ul');
+    //     for (let key in book) {
+    //         if (key !== 'photo') {
+    //             let li = document.createElement('li');
+    //             li.innerText = key + ' : ' +  book[key];
+    //             ul.appendChild(li);
+    //         }
+    //     }
+    //
+    //     div.append(h2, h4, ul, img);
+    //     document.body.appendChild(div);
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // for(let book of bookList) {
+    //     let div = document.createElement('div');
+    //     let h2 =  document.createElement('h2');
+    //     h2.innerText = 'BOOK SALE';
+    //     let h4 = document.createElement('h4');
+    //     h4.innerText = 'B O O K:';
+    //
+    //     let ul = document.createElement('ul');
+    //     for (let key in book) {
+    //         let li = document.createElement('li');
+    //         li.innerText = key +  ": " + book[key];
+    //         ul.appendChild(li);
+    //     }
+    //
+    //     let imageElement = document.createElement('img');
+    //     imageElement.src = 'https://www.britishbook.ua/upload/resize_cache/iblock/c25/lq7qbxmomxyyxg1zfdlyxuw0pk3wuckh/288_450_174b5ed2089e1946312e2a80dcd26f146/kniga_moby_dick.jpg';
+    //
+    //
+    //     div.append(h2, h4, ul, imageElement);
+    //     document.body.appendChild(div);
+    // }
+
+
+
+   // Способ 1. Создаём функцию:
+ //     function bookSale(bookList) {
+ //    for (let book of bookList) {
+ //        let div = document.createElement('div');
+ //        let h2 = document.createElement('h2');
+ //        h2.innerText = 'BOOK';
+ //        div.appendChild(h2);
+ //
+ //        for (let key in book) {
+ //            let li = document.createElement('li');
+ //
+ //            li.innerText = key + ' ' + book[key];
+ //            div.appendChild(li);
+ //        }
+ //
+ //        document.body.appendChild(div);
+ //    }
+ //       return bookList;
+ //   }
+ //
+ // console.log(bookSale(bookList));
+
+     //Способ 2. Без функции:
+    // for (let book of bookList) {
+    //     let div = document.createElement('div');
+    //
+    //     let h2 = document.createElement('h2');
+    //
+    //     h2.innerText = 'B O O K';
+    //
+    //     div.appendChild(h2);
+    //
+    //     for (let key in book) {
+    //         let li = document.createElement('li');
+    //
+    //         li.innerText = key + ' ' + book[key];
+    //
+    //         div.appendChild(li);
+    //     }
+    //
+    //     document.body.appendChild(div);
+    // };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //=======================================================================
+    //============================Blocks==================
+
+    //     for (let i = 0; i < 10; i++) {
+    //     let div= document.createElement('div');
+    //         let text = document.createElement('text');
+    //         text.innerText = 'Hello';
+    //         div.appendChild(text);
+    //         document.body.appendChild(div);
+    // }
+    //============================================================
+
+
+    // let array = ['aaaaaaa', 'bbbbbbbb', 'ccccccc', 'ddddddd', 'eeeeeee'];
+    // for(let i=0; i <array.length; i++) {
+    //     let word = array[i];
+    //     let prg = document.createElement('p');
+    //     prg.innerText = word;
+    //
+    //     document.body.appendChild(prg);
+    // }
+
+    // let array = ['ford', 'opel', 'mazda', 'subaru', 'toyota', 'benz', 'fiat', 'nissan', 'wolksvagen'];
+    // for (let i = 0; i < array.length; i++) {
+    //     let car = array[i];
+    //     let li = document.createElement('li');
+    //     li.innerText = car;
+    //     document.body.appendChild(li);
+    //
+    // }
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    // let array = ['ford', 'opel', 'mazda', 'subaru', 'toyota', 'benz', 'fiat', 'nissan', 'wolksvagen'];
+    //
+    //     function changeArray(arr) {
+    //         let newArray = array.pop();
+    //         console.log(newArray);
+    //     //return newArray;
+    //     }
+    //
+    // changeArray();
+
+    // let array = ['ford', 'opel', 'mazda', 'subaru', 'toyota', 'benz', 'fiat', 'nissan', 'wolksvagen'];
+    //      let newArray = array.filter(car => car !== 'toyota');
+    //           console.log(newArray);
+
+
+
+    // let array = ['ford', 'opel', 'mazda', 'subaru', 'toyota', 'benz', 'fiat', 'nissan', 'wolksvagen'];
+    //       let newArr = array.splice(2, 3); //с индекса 2 убрать 3 элемента
+    //            console.log(array);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    //Создаю блок
+    //  let container = document.createElement('div');
+    //  Создаем элемент <ul>
+    // let ul = document.createElement('ul');
+    //
+    //  Добавляем 10 элементов <li> с текстом "Привет"
+    // for (let i = 0; i < 10; i++) {
+    //     let li = document.createElement('li');
+    //     li.innerText = 'Привет';
+    //     ul.appendChild(li);
+    // }
+    //
+    //  Добавляем <ul> в <body>
+
+
+
+
+
+    // let wordArray = ['wuedue', 'efeygeyg', 'ygfyrgx3yx', 'sjiwiji', 'urrsjhnsjj', 'jkwshhw'];
+    // for (let i=0; i < wordArray.length; i++) {
+    //     let word = wordArray[i];
+    //     let ul = document.createElement('ul');
+    //
+    //
+    //         let li = document.createElement('li');
+    //         li.innerText = word;
+    //
+    //         ul.appendChild(li);
+    //
+    //     document.body.appendChild(li);
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*2 start*/
+    //   let greetings = [
+    //        'привет',
+    //        'hello',
+    //        'ola',
+    //        'aloha',
+    //        'greeting',
+    //        'bona sera'
+    //    ]
+    //    for (let i = 0; i < greetings.length; i++) {
+    //        let s = greetings[i];
+    //        let li = document.createElement('li');
+    //        li.innerText = s;
+    //        ul.appendChild(li);
+    //
+    //    }
+
+    /*2 end*/
+    // container.appendChild(ul);
+    // document.body.appendChild(container);
+
+    //+++++++++++++++++++++++++++++++++++++++++++++
+    //Пошаговое объяснение:
+    // Создаем элемент <ul>:
+    //
+    // let ul = document.createElement('ul');
+    // Используем метод document.createElement('ul'), чтобы создать новый элемент <ul>.
+    //
+    // Добавляем 10 элементов <li> с текстом "Привет":
+    //
+    // for (let i = 0; i < 10; i++) {
+    //     let li = document.createElement('li');
+    //     li.innerText = 'Привет';
+    //     ul.appendChild(li);
+    // }
+    // В этом цикле создается 10 элементов <li>.
+    // Для каждого элемента устанавливается текст "Привет",
+    // и затем он добавляется как дочерний элемент в элемент <ul>.
+    //
+    // Добавляем <ul> в <body>:
+    //
+    // document.body.appendChild(ul);
+    // Используем метод appendChild, чтобы добавить
+    // созданный элемент <ul> с его дочерними элементами <li> в элемент <body>.
+
+
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    // let array = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+    // for(let i = 0; i < array.length; i++) {
+    //     let word = array[i];
+    //     let li = document.createElement('li');
+    //     li.innerText = word;
+    //     document.body.appendChild(li);
+    // }
+    //
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    //+++++++++++++++++++++++++++++++++++++++++++++++++
+
+    //Есть массив let array = ["hello", "hi", "welcome", "goodnight", "goodmorning", "ciao", "arrivedercci"].
+    // Написать код в котором функция при помощи цикла создаёт список с тегами <li>
+    // с каждым элементом массива внутри.
+
+    //Для создания списка <ul> с тегами <li>, содержащими элементы из массива, можно использовать
+    // следующую функцию. Эта функция создает элемент <ul>, затем в цикле добавляет каждый элемент
+    // массива в качестве элемента <li> и добавляет этот список в документ.
+
+    //Вот пример кода:
+
+    //let array = ["hello", "hi", "welcome", "goodnight", "goodmorning", "ciao", "arrivedercci"];
+
+    //function createList(arr) {
+    // Создаем элемент ul
+    //  let ul = document.createElement('ul');
+
+    // Проходимся по каждому элементу массива
+    //  for (let item of arr) {
+    // Создаем элемент li
+    //   let li = document.createElement('li');
+    // Задаем текстовое содержимое li
+    //    li.textContent = item;
+    // Добавляем li в ul
+    //    ul.appendChild(li);
+    //  }
+
+    // Добавляем ul в тело документа
+    //    document.body.appendChild(ul);
+    //}
+
+    // Вызов функции для создания списка
+    //createList(array);
+
+    //Объяснение кода:
+    //1.Создание элемента <ul>:
+    //let ul = document.createElement('ul');
+    //Этот код создает новый элемент <ul>, который будет использоваться в качестве контейнера для списка.
+    //2.Цикл для каждого элемента массива:
+    //for (let item of arr) {
+    // Создаем элемент li
+    //   let li = document.createElement('li');
+    // Задаем текстовое содержимое li
+    //   li.textContent = item;
+    // Добавляем li в ul
+    //  ul.appendChild(li);
+    //}
+    //В этом цикле создается новый элемент <li> для каждого элемента массива.
+    // Текстовое содержимое <li> устанавливается равным текущему элементу массива,
+    // а затем <li> добавляется в <ul>.
+
+    //3.Добавление списка в документ:
+    //document.body.appendChild(ul);
+
+    //Этот код добавляет элемент <ul> в тело документа, что позволяет отобразить
+    // созданный список на веб-странице.
+
+    //Запустив эту функцию, вы получите список, в котором каждый элемент массива
+    // будет представлен в виде элемента <li> внутри <ul>.
+
+    //=============================================
+    // let mass = [22, 33, 44, 55, 66, 77, 88, 99];
+    // function createNum(arr) {
+    //     for (let i = 0; i < mass.length; i++) {
+    //         let num = mass[i];
+    //         let li = document.createElement('li');
+    //         li.innerText = num;
+    //         document.body.appendChild(li);
+    //     }
+    // }
+    // createNum(mass);
+    //==========================================
+
+
+    // Создать массив из 10 разных книг. Поля книг включают свойства title, genre,
+    // year, pages. Кроме этого поле каждой книги содержит объект author со свойствами name и age.
+    //
+    // let bookList = [
+    //     {
+    //         title: "To Kill a Mockingbird",
+    //         genre: "Fiction",
+    //         year: 1960,
+    //         pages: 281,
+    //         author: {
+    //             name: "Harper Lee",
+    //             age: 34
+    //         }
+    //     },
+    //     {
+    //         title: "1984",
+    //         genre: "Dystopian",
+    //         year: 1949,
+    //         pages: 328,
+    //         author: {
+    //             name: "George Orwell",
+    //             age: 46
+    //         }
+    //     },
+    //     {
+    //         title: "Moby Dick",
+    //         genre: "Adventure",
+    //         year: 1851,
+    //         pages: 635,
+    //         author: {
+    //             name: "Herman Melville",
+    //             age: 32
+    //         }
+    //     },
+    //     {
+    //         title: "Pride and Prejudice",
+    //         genre: "Romance",
+    //         year: 1813,
+    //         pages: 279,
+    //         author: {
+    //             name: "Jane Austen",
+    //             age: 37
+    //         }
+    //     },
+    //     {
+    //         title: "The Great Gatsby",
+    //         genre: "Tragedy",
+    //         year: 1925,
+    //         pages: 180,
+    //         author: {
+    //             name: "F. Scott Fitzgerald",
+    //             age: 29
+    //         }
+    //     },
+    //     {
+    //         title: "War and Peace",
+    //         genre: "Historical",
+    //         year: 1869,
+    //         pages: 1225,
+    //         author: {
+    //             name: "Leo Tolstoy",
+    //             age: 41
+    //         }
+    //     },
+    //     {
+    //         title: "The Catcher in the Rye",
+    //         genre: "Fiction",
+    //         year: 1951,
+    //         pages: 214,
+    //         author: {
+    //             name: "J.D. Salinger",
+    //             age: 32
+    //         }
+    //     },
+    //     {
+    //         title: "The Hobbit",
+    //         genre: "Fantasy",
+    //         year: 1937,
+    //         pages: 310,
+    //         author: {
+    //             name: "J.R.R. Tolkien",
+    //             age: 45
+    //         }
+    //     },
+    //     {
+    //         title: "Crime and Punishment",
+    //         genre: "Psychological",
+    //         year: 1866,
+    //         pages: 671,
+    //         author: {
+    //             name: "Fyodor Dostoevsky",
+    //             age: 44
+    //         }
+    //     },
+    //     {
+    //         title: "The Odyssey",
+    //         genre: "Epic",
+    //         year: -800,
+    //         pages: 541,
+    //         author: {
+    //             name: "Homer",
+    //             age: 50
+    //         }
+    //     }
+    // ];
+
+
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+</script>
+
+
+</body>
+</html>
